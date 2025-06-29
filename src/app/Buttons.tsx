@@ -18,8 +18,8 @@ export function Buttons() {
         Render Realtime Clients
       </button>
       <ClientOnly>
-
-      <SpaMode /></ClientOnly>
+        <SpaMode />
+      </ClientOnly>
     </div>
   )
 }
