@@ -17,7 +17,7 @@ export function Buttons() {
       >
         Render Realtime Clients
       </button>
-      <ClientOnly>
+      <ClientOnly fallback="">
         <SpaMode />
       </ClientOnly>
     </div>
