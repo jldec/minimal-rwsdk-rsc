@@ -17,7 +17,6 @@ export function Nav() {
       <span className="flex-grow" />
       <a
         href="https://github.com/jldec/minimal-rwsdk-rsc"
-        target="\_blank"
         className="hover:underline hover:text-orange-500"
       >
         <svg
