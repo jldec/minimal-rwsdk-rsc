@@ -11,7 +11,7 @@ export type AppContext = {}
 
 const app = defineApp([
   realtimeRoute(() => env.REALTIME_DURABLE_OBJECT),
-  render(Document, [route('*', Page)])
+  render(Document, [route('*', Page)], { ssr: false })
 ])
 
 export default {
