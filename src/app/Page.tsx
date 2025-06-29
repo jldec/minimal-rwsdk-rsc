@@ -1,7 +1,7 @@
 import type { RequestInfo } from 'rwsdk/worker'
 import { Layout } from './Layout'
 import { Button } from './Button'
-import { env } from 'cloudflare:workers'
+import { IS_DEV } from 'rwsdk/constants'
 
 export function Page(r: RequestInfo) {
   return (
@@ -17,7 +17,7 @@ export function Page(r: RequestInfo) {
           <b>r.request.url</b>: {r.request.url}
         </p>
         <p>
-          <b>env.DEV</b>: '{env.DEV}'
+          <b>IS_DEV</b>: {IS_DEV ? 'true' : 'false'}
         </p>
         <p className="whitespace-pre">
           <b>r.params</b>: {JSON.stringify(r.params, null, 2)}

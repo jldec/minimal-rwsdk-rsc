@@ -6,16 +6,11 @@ Minimal starter for RedwoodSDK with realtime RSC
 {
   "dev": "vite dev",
   "build": "vite build",
-  "preview": "vite preview",
+  "preview": "vite build && vite preview",
   "ship": "vite build && wrangler deploy",
   "types": "wrangler types --include-runtime false --strict-vars false",
   "tail": "wrangler tail"
 }
-```
-
-### .dev.vars
-```sh
-DEV=true
 ```
 
 ### Further Reading
