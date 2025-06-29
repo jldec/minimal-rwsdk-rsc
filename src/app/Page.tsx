@@ -1,13 +1,11 @@
 import type { RequestInfo } from 'rwsdk/worker'
 import { Layout } from './Layout'
-import { Button } from './Button'
 import { IS_DEV } from 'rwsdk/constants'
 
 export function Page(r: RequestInfo) {
   return (
     <Layout>
-      <Button />
-      <div className="mt-4">
+      <div className="m-3">
         <h1 className="font-bold border-b border-gray-200 mb-2">
           {new URL(r.request.url).pathname}
         </h1>
