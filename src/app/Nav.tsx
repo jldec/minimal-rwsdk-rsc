@@ -2,7 +2,7 @@ export function Nav() {
   return (
     <nav className="flex flex-row gap-4 bg-gray-100 p-2">
       <span className="flex-grow" />
-      <a href="/" className="hover:underline hover:text-orange-500" target="\_blank">
+      <a href="/" target="\_blank" className="hover:underline hover:text-orange-500">
         Home
       </a>
       <a href="/?spa" className="hover:underline hover:text-orange-500">
@@ -17,6 +17,7 @@ export function Nav() {
       <span className="flex-grow" />
       <a
         href="https://github.com/jldec/minimal-rwsdk-rsc"
+        target="\_blank"
         className="hover:underline hover:text-orange-500"
       >
         <svg
