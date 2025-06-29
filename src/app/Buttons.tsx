@@ -1,5 +1,6 @@
 'use client'
 import { renderClients } from './server-functions'
+import { ClientOnly } from './ClientOnly'
 import { SpaMode } from './SpaMode'
 
 async function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
@@ -16,7 +17,9 @@ export function Buttons() {
       >
         Render Realtime Clients
       </button>
-      <SpaMode />
+      <ClientOnly>
+        <SpaMode />
+      </ClientOnly>
     </div>
   )
 }
