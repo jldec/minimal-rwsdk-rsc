@@ -1,5 +1,5 @@
 # minimal-rwsdk-rsc
-Minimal RedwoodSDK starter for testing realtime sync and [client-side navigation](https://docs.rwsdk.com/guides/frontend/client-side-nav/) (SPA mode.) 
+Minimal RedwoodSDK starter for testing [realtime sync](https://docs.rwsdk.com/core/realtime/) and [client-side navigation](https://docs.rwsdk.com/guides/frontend/client-side-nav/) (SPA mode.) 
 
 Includes tailwindcss, minimal pnpm scripts (no DB), no lockfile (see `.npmrc`), no runtime types in worker-configuration.d.ts (too noisy).
 
