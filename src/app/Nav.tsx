@@ -1,7 +1,7 @@
 export function Nav() {
   return (
     <nav className="flex flex-row gap-4 bg-gray-100 p-2">
-      <span className="flex-grow" />
+      <span className="hidden sm:flex flex-grow" />
       <a href="/" target="\_blank" className="hover:underline hover:text-orange-500">
         Home
       </a>
