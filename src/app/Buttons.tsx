@@ -1,5 +1,6 @@
 'use client'
 import { renderClients } from './server-functions'
+import { SpaMode } from './SpaMode'
 
 async function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
   e.preventDefault()
@@ -15,8 +16,7 @@ export function Buttons() {
       >
         Render Realtime Clients
       </button>
-      {/* @ts-ignore */}
-      {window && window.spaMode ? <span className="text-sm bg-orange-200 rounded-full px-2 py-0.5">SPA mode</span> : ''}
+      <SpaMode />
     </div>
   )
 }
