@@ -3,13 +3,13 @@ import { Layout } from './Layout'
 import { IS_DEV } from 'rwsdk/constants'
 
 export function Page(r: RequestInfo) {
-  const pathname = new URL(r.request.url).pathname;
+  const pathname = new URL(r.request.url).pathname
   const pages: Record<string, string> = {
     '/': 'Home',
     '/about': 'About',
-    '/test': 'Test',
-  };
-  const title = pages[pathname] || pathname;
+    '/test': 'Test'
+  }
+  const title = pages[pathname] || pathname
 
   return (
     <Layout>

@@ -1,7 +1,6 @@
 'use client'
 
 export function SpaModeToggle({ isSpaMode }: { isSpaMode: boolean }) {
-
   // always navigates
   function handleChange() {
     const url = new URL(window.location.href)
