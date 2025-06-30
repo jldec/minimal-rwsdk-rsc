@@ -1,17 +1,24 @@
+import { SpaModeToggle } from './SpaModeToggle'
+import { requestInfo } from 'rwsdk/worker'
+
 export function Nav() {
+  const url = new URL(requestInfo.request.url)
+  const isSpaMode = url.searchParams.get('spa') !== null
+  const homeUrl = isSpaMode ? '/?spa' : '/'
+  const aboutUrl = isSpaMode ? '/about?spa' : '/about'
+  const testUrl = isSpaMode ? '/test?spa' : '/test'
+
   return (
     <nav className="flex flex-row gap-4 bg-gray-100 p-2">
-      <span className="hidden sm:flex flex-grow" />
-      <a href="/" target="\_blank" className="hover:underline hover:text-orange-500">
+      <SpaModeToggle isSpaMode={isSpaMode} />
+      <span className="flex-grow" />
+      <a href={homeUrl} className="hover:underline hover:text-orange-500">
         Home
       </a>
-      <a href="/?spa" className="hover:underline hover:text-orange-500">
-        Home-SPA
-      </a>
-      <a href="/about" className="hover:underline hover:text-orange-500">
+      <a href={aboutUrl} className="hover:underline hover:text-orange-500">
         About
       </a>
-      <a href="/test" className="hover:underline hover:text-orange-500">
+      <a href={testUrl} className="hover:underline hover:text-orange-500">
         Test
       </a>
       <span className="flex-grow" />
