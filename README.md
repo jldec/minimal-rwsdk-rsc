@@ -1,10 +1,8 @@
 # minimal-rwsdk-rsc
-Minimal RedwoodSDK starter for testing [realtime sync](https://docs.rwsdk.com/core/realtime/) and [client-side navigation](https://docs.rwsdk.com/guides/frontend/client-side-nav/) (SPA mode.)  
-Deployed at https://minimal-rwsdk-rsc.jldec.workers.dev/
+Minimal RedwoodSDK starter for testing [realtime sync](https://docs.rwsdk.com/core/realtime/) and [client-side navigation](https://docs.rwsdk.com/guides/frontend/client-side-nav/) (SPA mode.) Toggles between SPA and normal navigation.
 
-![Screenshot 2025-06-29 at 21 13 49](https://github.com/user-attachments/assets/90fca05b-70dc-4184-b00f-46acccf8bc63)
-
-Includes tailwindcss, minimal pnpm scripts (no DB), no lockfile (see `.npmrc`), no runtime types in worker-configuration.d.ts (too noisy).
+#### https://minimal-rwsdk-rsc.jldec.workers.dev/. 
+<img width="877" alt="Screenshot 2025-06-30 at 11 37 51" src="https://github.com/user-attachments/assets/536fe05d-3e82-4832-9dd9-9c6f102507de" />
 
 ### package.json scripts
 ```json
@@ -17,6 +15,7 @@ Includes tailwindcss, minimal pnpm scripts (no DB), no lockfile (see `.npmrc`), 
   "tail": "wrangler tail"
 }
 ```
+Includes tailwindcss, minimal pnpm scripts (no DB), no lockfile (see `.npmrc`), no runtime types in worker-configuration.d.ts (too noisy).
 
 ### Further Reading
 - [RedwoodSDK Docs](https://docs.rwsdk.com/)
