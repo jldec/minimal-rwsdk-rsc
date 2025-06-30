@@ -18,9 +18,8 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.7.5",
     "@cloudflare/workers-types": "^4.20250628.0",
-    "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.11",
-    "@types/node": "^24.0.7",
+    "@types/node": "^24.0.8",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "daisyui": "^5.0.43",
