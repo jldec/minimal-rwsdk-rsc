@@ -1,8 +1,10 @@
 # minimal-rwsdk-rsc
 Minimal RedwoodSDK starter for testing [realtime sync](https://docs.rwsdk.com/core/realtime/) and [client-side navigation](https://docs.rwsdk.com/guides/frontend/client-side-nav/) (SPA mode.) Toggles between SPA and normal navigation.
 
-#### https://minimal-rwsdk-rsc.jldec.workers.dev/. 
-<img width="877" alt="Screenshot 2025-06-30 at 11 37 51" src="https://github.com/user-attachments/assets/536fe05d-3e82-4832-9dd9-9c6f102507de" />
+https://minimal-rwsdk-rsc.jldec.workers.dev/
+
+<img width="740" alt="Screenshot 2025-06-30 at 13 00 02" src="https://github.com/user-attachments/assets/12f58811-820b-4ab5-b9ee-da8feb32f940" />
+
 
 ### package.json scripts
 ```json
