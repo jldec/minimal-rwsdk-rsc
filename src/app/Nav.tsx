@@ -3,7 +3,7 @@ import { requestInfo } from 'rwsdk/worker'
 
 export function Nav() {
   const isSpaMode = new URL(requestInfo.request.url).searchParams.has('spa')
-  const url = (path: string) => (isSpaMode ? `${path}?spa=` : path)
+  const url = (path: string) => path + (isSpaMode ? '?spa=' : '')
 
   return (
     <nav className="relative flex flex-row justify-between items-center bg-gray-100 p-2">
