@@ -13,6 +13,7 @@ export function Page(r: RequestInfo) {
 
   return (
     <Layout>
+      <title>{title + ' minimal-rwsdk-rsc'}</title>
       <div className="m-3">
         <h1 className="text-center text-2xl font-bold border-b border-gray-200 mb-2">{title}</h1>
         <p>This is a server component</p>
