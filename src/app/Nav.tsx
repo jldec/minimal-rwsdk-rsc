@@ -9,19 +9,19 @@ export function Nav() {
   const testUrl = isSpaMode ? '/test?spa' : '/test'
 
   return (
-    <nav className="flex flex-row gap-4 bg-gray-100 p-2">
+    <nav className="relative flex flex-row justify-between items-center bg-gray-100 p-2">
       <SpaModeToggle isSpaMode={isSpaMode} />
-      <span className="flex-grow" />
-      <a href={homeUrl} className="hover:underline hover:text-orange-500">
-        Home
-      </a>
-      <a href={aboutUrl} className="hover:underline hover:text-orange-500">
-        About
-      </a>
-      <a href={testUrl} className="hover:underline hover:text-orange-500">
-        Test
-      </a>
-      <span className="flex-grow" />
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-row gap-4">
+        <a href={homeUrl} className="hover:underline hover:text-orange-500">
+          Home
+        </a>
+        <a href={aboutUrl} className="hover:underline hover:text-orange-500">
+          About
+        </a>
+        <a href={testUrl} className="hover:underline hover:text-orange-500">
+          Test
+        </a>
+      </div>
       <a
         href="https://github.com/jldec/minimal-rwsdk-rsc"
         target="\_blank"

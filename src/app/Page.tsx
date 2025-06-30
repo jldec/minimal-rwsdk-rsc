@@ -3,12 +3,18 @@ import { Layout } from './Layout'
 import { IS_DEV } from 'rwsdk/constants'
 
 export function Page(r: RequestInfo) {
+  const pathname = new URL(r.request.url).pathname;
+  const pages: Record<string, string> = {
+    '/': 'Home',
+    '/about': 'About',
+    '/test': 'Test',
+  };
+  const title = pages[pathname] || pathname;
+
   return (
     <Layout>
       <div className="m-3">
-        <h1 className="font-bold border-b border-gray-200 mb-2">
-          {new URL(r.request.url).pathname}
-        </h1>
+        <h1 className="text-center text-2xl font-bold border-b border-gray-200 mb-2">{title}</h1>
         <p>This is a server component</p>
         <p>{new Date().toISOString()}</p>
         <p>
