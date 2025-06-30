@@ -1,7 +1,5 @@
 'use client'
 import { renderClients } from './server-functions'
-import { ClientOnly } from './ClientOnly'
-import { SpaMode } from './SpaMode'
 
 async function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
   e.preventDefault()
@@ -17,9 +15,6 @@ export function Buttons() {
       >
         Render Realtime Clients
       </button>
-      <ClientOnly fallback="">
-        <SpaMode />
-      </ClientOnly>
     </div>
   )
 }
