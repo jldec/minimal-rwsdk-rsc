@@ -1,8 +1,12 @@
 @import 'tailwindcss';
-@plugin "daisyui";
+
+@plugin "daisyui" {
+  themes: light --default;
+  logs: false;
+}
 
 @plugin "daisyui/theme" {
-  name: 'mytheme';
+  name: 'light';
   default: true;
-  --color-secondary: oklch(65% 0.18 54); /* Matches orange-500 */
+  --color-success: #009f00;
 }
