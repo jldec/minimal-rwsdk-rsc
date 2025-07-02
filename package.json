@@ -13,13 +13,13 @@
     "tail": "wrangler tail"
   },
   "dependencies": {
-    "rwsdk": "0.1.6"
+    "rwsdk": "0.1.8"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.8.0",
-    "@cloudflare/workers-types": "^4.20250701.0",
+    "@cloudflare/workers-types": "^4.20250702.0",
     "@tailwindcss/vite": "^4.1.11",
-    "@types/node": "^24.0.8",
+    "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "daisyui": "^5.0.43",

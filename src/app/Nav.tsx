@@ -21,7 +21,6 @@ export function Nav() {
       </div>
       <a
         href="https://github.com/jldec/minimal-rwsdk-rsc"
-        target="\_blank"
         className="hover:underline hover:text-orange-500"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
