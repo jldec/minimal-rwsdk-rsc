@@ -24,10 +24,10 @@ export function Page(r: RequestInfo) {
         <p>
           <b>IS_DEV</b>: {IS_DEV ? 'true' : 'false'}
         </p>
-        <p className="whitespace-pre">
+        <p className="whitespace-pre-line">
           <b>r.params</b>: {JSON.stringify(r.params, null, 2)}
         </p>
-        <p className="whitespace-pre">
+        <p className="whitespace-pre-line">
           <b>r.request.headers</b>: {JSON.stringify(Object.fromEntries(r.request.headers), null, 2)}
         </p>
       </div>
