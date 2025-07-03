@@ -1,14 +1,26 @@
+import { RealtimeToggle } from './RealtimeToggle'
 import { SpaModeToggle } from './SpaModeToggle'
 import { requestInfo } from 'rwsdk/worker'
 
 export function Nav() {
   const isSpaMode = new URL(requestInfo.request.url).searchParams.has('spa')
-  const url = (path: string) => path + (isSpaMode ? '?spa=' : '')
+  const isRealtimeMode = new URL(requestInfo.request.url).searchParams.has('realtime')
+
+  const url = (path: string) => {
+    const params = new URLSearchParams()
+    if (isSpaMode) params.set('spa', '')
+    if (isRealtimeMode) params.set('realtime', '')
+    const search = params.toString()
+    return path + (search ? '?' + search : '')
+  }
 
   return (
-    <nav className="relative flex flex-row justify-between items-center bg-gray-100 p-2">
-      <SpaModeToggle isSpaMode={isSpaMode} />
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-row gap-2 sm:gap-4">
+    <nav className="relative flex flex-row sm:justify-between gap-2 items-center bg-gray-100 p-2">
+      <div className="flex flex-row flex-grow gap-2">
+        <SpaModeToggle isSpaMode={isSpaMode} />
+        <RealtimeToggle isRealtimeMode={isRealtimeMode} />
+      </div>
+      <div className="sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 flex flex-row gap-2 sm:gap-4">
         <a href={url('/')} className="hover:underline hover:text-orange-500">
           Home
         </a>
