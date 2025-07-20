@@ -1,7 +1,9 @@
 import { requestInfo as r } from 'rwsdk/worker'
 import { Layout } from './Layout'
-import { IS_DEV } from 'rwsdk/constants'
 import { Url } from './Url'
+import { Headers } from './Headers'
+import { Params } from './Params'
+import { IsDev } from './IsDev'
 
 async function sleep(s: number) {
   return new Promise(resolve => setTimeout(resolve, s * 1000))
@@ -30,15 +32,9 @@ export async function Page() {
         <p>This is a server component</p>
         <p>{new Date().toISOString()}</p>
         <Url />
-        <p>
-          <b>IS_DEV</b>: {IS_DEV ? 'true' : 'false'}
-        </p>
-        <p className="whitespace-pre-line">
-          <b>r.params</b>: {JSON.stringify(r.params, null, 2)}
-        </p>
-        <p className="whitespace-pre-line">
-          <b>r.request.headers</b>: {JSON.stringify(Object.fromEntries(r.request.headers), null, 2)}
-        </p>
+        <IsDev />
+        <Params />
+        <Headers />
       </div>
     </Layout>
   )
