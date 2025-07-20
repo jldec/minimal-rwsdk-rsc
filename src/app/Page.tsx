@@ -1,8 +1,18 @@
-import type { RequestInfo } from 'rwsdk/worker'
+import { requestInfo as r } from 'rwsdk/worker'
 import { Layout } from './Layout'
 import { IS_DEV } from 'rwsdk/constants'
+import { Url } from './Url'
 
-export function Page(r: RequestInfo) {
+async function sleep(s: number) {
+  return new Promise(resolve => setTimeout(resolve, s * 1000))
+}
+
+export async function Page() {
+  const url = new URL(r.request.url)
+  const sleepTime = Number(url.searchParams.get('sleep'))
+  if (sleepTime > 0) {
+    await sleep(sleepTime)
+  }
   const pathname = new URL(r.request.url).pathname
   const pages: Record<string, string> = {
     '/': 'Home',
@@ -16,11 +26,10 @@ export function Page(r: RequestInfo) {
       <title>{title + ' minimal-rwsdk-rsc'}</title>
       <div className="m-3">
         <h1 className="text-center text-2xl font-bold border-b border-gray-200 mb-2">{title}</h1>
+        {sleepTime > 0 && <p>Sleeping {sleepTime} seconds</p>}
         <p>This is a server component</p>
         <p>{new Date().toISOString()}</p>
-        <p>
-          <b>r.request.url</b>: {r.request.url}
-        </p>
+        <Url />
         <p>
           <b>IS_DEV</b>: {IS_DEV ? 'true' : 'false'}
         </p>
