@@ -3,11 +3,15 @@ import { SpaModeToggle } from './SpaModeToggle'
 import { requestInfo } from 'rwsdk/worker'
 
 export function Nav() {
-  const isSpaMode = new URL(requestInfo.request.url).searchParams.has('spa')
-  const isRealtimeMode = new URL(requestInfo.request.url).searchParams.has('realtime')
+  const url = new URL(requestInfo.request.url)
+  const isSpaMode = url.searchParams.has('spa')
+  const isRealtimeMode = url.searchParams.has('realtime')
+  let sleepTime = Number(url.searchParams.get('sleep'))
+  sleepTime = sleepTime > 0 ? sleepTime : 0
 
-  const url = (path: string) => {
+  const href = (path: string) => {
     const params = new URLSearchParams()
+    if (sleepTime) params.set('sleep', sleepTime.toString())
     if (isSpaMode) params.set('spa', '')
     if (isRealtimeMode) params.set('realtime', '')
     const search = params.toString()
@@ -15,19 +19,24 @@ export function Nav() {
   }
 
   return (
-    <nav className="relative flex flex-row sm:justify-between gap-2 items-center bg-gray-100 p-2">
+    <nav
+      className={
+        'relative flex flex-row sm:justify-between gap-2 items-center p-2 ' +
+        (sleepTime ? 'bg-yellow-100' : 'bg-gray-100')
+      }
+    >
       <div className="flex flex-row flex-grow gap-2">
         <SpaModeToggle isSpaMode={isSpaMode} />
         <RealtimeToggle isRealtimeMode={isRealtimeMode} />
       </div>
       <div className="sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 flex flex-row gap-2 sm:gap-4">
-        <a href={url('/')} className="hover:underline hover:text-orange-500">
+        <a href={href('/')} className="hover:underline hover:text-orange-500">
           Home
         </a>
-        <a href={url('/about')} className="hover:underline hover:text-orange-500">
+        <a href={href('/about')} className="hover:underline hover:text-orange-500">
           About
         </a>
-        <a href={url('/test')} className="hover:underline hover:text-orange-500">
+        <a href={href('/test')} className="hover:underline hover:text-orange-500">
           Test
         </a>
       </div>

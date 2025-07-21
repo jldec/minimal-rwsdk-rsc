@@ -4,7 +4,7 @@ import { Url } from './Url'
 import { Headers } from './Headers'
 import { Params } from './Params'
 import { IsDev } from './IsDev'
-import { sleep } from './sleep'
+import { Sleep } from './Sleep'
 
 const pages: Record<string, string> = {
   '/': 'Home',
@@ -14,10 +14,6 @@ const pages: Record<string, string> = {
 
 export async function Page() {
   const url = new URL(r.request.url)
-  const sleepTime = Number(url.searchParams.get('sleep'))
-  if (sleepTime > 0) {
-    await sleep(sleepTime)
-  }
   const title = pages[url.pathname] || url.pathname
 
   return (
@@ -25,8 +21,8 @@ export async function Page() {
       <title>{title + ' minimal-rwsdk-rsc'}</title>
       <div className="m-3">
         <h1 className="text-center text-2xl font-bold border-b border-gray-200 mb-2">{title}</h1>
-        {sleepTime > 0 && <p>Sleeping {sleepTime} seconds</p>}
-        <p>This is a server component</p>
+        This is a server component
+        <Sleep />
         <p>{new Date().toISOString()}</p>
         <Url />
         <IsDev />
