@@ -4,9 +4,12 @@ import { Url } from './Url'
 import { Headers } from './Headers'
 import { Params } from './Params'
 import { IsDev } from './IsDev'
+import { sleep } from './sleep'
 
-async function sleep(s: number) {
-  return new Promise(resolve => setTimeout(resolve, s * 1000))
+const pages: Record<string, string> = {
+  '/': 'Home',
+  '/about': 'About',
+  '/test': 'Test'
 }
 
 export async function Page() {
@@ -15,13 +18,7 @@ export async function Page() {
   if (sleepTime > 0) {
     await sleep(sleepTime)
   }
-  const pathname = new URL(r.request.url).pathname
-  const pages: Record<string, string> = {
-    '/': 'Home',
-    '/about': 'About',
-    '/test': 'Test'
-  }
-  const title = pages[pathname] || pathname
+  const title = pages[url.pathname] || url.pathname
 
   return (
     <Layout>
