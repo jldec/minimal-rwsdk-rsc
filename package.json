@@ -13,20 +13,20 @@
     "tail": "wrangler tail"
   },
   "dependencies": {
-    "rwsdk": "1.0.0-alpha.9"
+    "rwsdk": "1.0.0-alpha.16"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.13.4",
+    "@cloudflare/vite-plugin": "1.13.6",
     "@cloudflare/workers-types": "^4.20250924.0",
     "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^24.5.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "daisyui": "^5.1.18",
+    "daisyui": "^5.1.22",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
-    "wrangler": "4.39.0"
+    "wrangler": "4.40.1"
   },
   "prettier": {
     "printWidth": 100,
