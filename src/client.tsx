@@ -1,5 +1,5 @@
-import { initClient, initClientNavigation } from 'rwsdk/client'
 import { initRealtimeClient } from 'rwsdk/realtime/client'
+import { initClient, initClientNavigation } from 'rwsdk/client'
 
 const url = new URL(window.location.href)
 
